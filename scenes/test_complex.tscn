@@ -1,0 +1,9 @@
+[gd_scene format=3]
+
+[sub_resource type="SphereMesh" id="SphereMesh_de7ph"]
+radius = 1.0
+
+[node name="Root" type="Node3D" unique_id=192214386]
+
+[node name="Child" type="MeshInstance3D" parent="." unique_id=1680472307]
+mesh = SubResource("SphereMesh_de7ph")

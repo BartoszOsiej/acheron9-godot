@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[sub_resource type="CylinderMesh" id="mesh"]
+radius = 3.0
+height = 8.0
+radial_segments = 12
+
+[sub_resource type="SphereShape3D" id="shape"]
+radius = 10.0
+
+[node name="TapePickup" type="Area3D" unique_id=200000002]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=200000003]
+shape = SubResource("shape")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=200000004]
+mesh = SubResource("mesh")
+rotation_degrees = Vector3(90, 0, 0)

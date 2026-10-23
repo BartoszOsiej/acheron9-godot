@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/test_autoload.gd" id="1"]
+
+[node name="TestAutoload" type="Node" unique_id=888888888]
+script = ExtResource("1")

@@ -1,0 +1,32 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ai/humanoid_ai.gd" id="ai_script"]
+
+[sub_resource type="CapsuleShape3D" id="capsule"]
+radius = 40.0
+height = 192.0
+
+[sub_resource type="CylinderMesh" id="body_mesh"]
+radius = 40
+height = 200
+radial_segments = 12
+
+[node name="PurgeEntity" type="CharacterBody3D" unique_id=500000001]
+script = ExtResource("ai_script")
+collision_layer = 4
+collision_mask = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=500000002]
+shape = SubResource("capsule")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=500000003]
+path_requested_distance = 100.0
+target_reached_distance = 100.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=500000004]
+mesh = SubResource("body_mesh")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=500000005]
+visible = false
+light_energy = 0.0
+light_color = Color(0.8, 0.1, 0.1, 1.0)

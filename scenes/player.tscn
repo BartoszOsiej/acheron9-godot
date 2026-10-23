@@ -1,0 +1,55 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="player_script"]
+[ext_resource type="Script" path="res://scripts/components/flashlight_component.gd" id="flashlight_script"]
+[ext_resource type="Script" path="res://scripts/components/inventory_component.gd" id="inventory_script"]
+[ext_resource type="Script" path="res://scripts/components/interaction_component.gd" id="interaction_script"]
+[ext_resource type="Script" path="res://scripts/components/fear_sanity_component.gd" id="fear_script"]
+[ext_resource type="Script" path="res://scripts/components/microphone_input.gd" id="mic_script"]
+
+[sub_resource type="CapsuleShape3D" id="capsule"]
+radius = 20.0
+height = 152.0
+
+[node name="Player" type="CharacterBody3D" unique_id=300000001]
+script = ExtResource("player_script")
+collision_layer = 1
+collision_mask = 3
+gravity_scale = 1.0
+max_slides = 5
+platform_on_leave = 1
+platform_on_leave_roof_physics = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=300000002]
+shape = SubResource("capsule")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=300000003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 60, 0)
+fov = 90
+near = 0.1
+far = 5000.0
+
+[node name="FlashlightLight" type="SpotLight3D" parent="Camera3D" unique_id=300000004]
+visible = false
+light_energy = 0.0
+light_color = Color(0.8, 0.7, 0.4, 1.0)
+attenuation = 0.5
+spot_angle = 25.0
+spot_attenuation = 0.0
+shadow_enabled = true
+shadow_opacity = 1.0
+
+[node name="FlashlightComponent" type="Node" parent="." unique_id=300000005]
+script = ExtResource("flashlight_script")
+
+[node name="InventoryComponent" type="Node" parent="." unique_id=300000006]
+script = ExtResource("inventory_script")
+
+[node name="InteractionComponent" type="Node" parent="." unique_id=300000007]
+script = ExtResource("interaction_script")
+
+[node name="FearSanityComponent" type="Node" parent="." unique_id=300000008]
+script = ExtResource("fear_script")
+
+[node name="MicrophoneInputManager" type="Node" parent="." unique_id=300000009]
+script = ExtResource("mic_script")

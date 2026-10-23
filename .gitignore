@@ -1,0 +1,17 @@
+# Godot
+.import/
+export.cfg
+export_presets.cfg
+
+# Built artifacts
+.godot/
+*.godot
+
+# User data
+user://
+user://saved_games/
+
+# OS
+.DS_Store
+Thumbs.db
+.godot/

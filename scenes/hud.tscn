@@ -1,0 +1,97 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="hud_script"]
+
+[node name="HUD" type="CanvasLayer" unique_id=400000001]
+layer = 10
+script = ExtResource("hud_script")
+
+[node name="CRTOverlay" type="ColorRect" parent="." unique_id=400000002]
+anchor_right = 1.0
+anchor_bottom = 1.0
+layout_offset = Vector2(0, 0)
+size = Vector2(1920, 1080)
+z_index = 0
+mouse_filter = 0
+color = Color(0, 0.4, 0, 0.3)
+
+[node name="InGameHUD" type="VBoxContainer" parent="." unique_id=400000003]
+position = Vector2(20, 20)
+separation = 4
+
+[node name="TimerLabel" type="Label" parent="InGameHUD" unique_id=400000004]
+text = "[TIMER] 60:00"
+
+[node name="BatteryLabel" type="Label" parent="InGameHUD" unique_id=400000005]
+text = "[BATT] 100%"
+
+[node name="TapeLabel" type="Label" parent="InGameHUD" unique_id=400000006]
+text = "[TAPE] 0/3 RECOVERED"
+
+[node name="PowerLabel" type="Label" parent="InGameHUD" unique_id=400000007]
+text = "[CRT POWER] 100%"
+
+[node name="SpeechLabel" type="Label" parent="." unique_id=400000008]
+anchor_top = 1.0
+anchor_right = 1.0
+position = Vector2(0, -100)
+size = Vector2(800, 40)
+text = ""
+visible = false
+horizontal_alignment = 1
+theme_type_variation = "Label"
+
+[node name="MainMenu" type="VBoxContainer" parent="." unique_id=400000009]
+position = Vector2(320, 200)
+separation = 40
+visible = false
+
+[node name="Title1" type="Label" parent="MainMenu" unique_id=400000010]
+text = "=== A C H E R O N - 9 : INCIDENT ==="
+
+[node name="Title2" type="Label" parent="MainMenu" unique_id=400000011]
+text = "=== SECURE FACILITY PROTOCOL ==="
+
+[node name="Item0" type="Label" parent="MainMenu" unique_id=400000012]
+text = "> INITIATE PROTOCOL"
+
+[node name="Item1" type="Label" parent="MainMenu" unique_id=400000013]
+text = "  CONFIGURE TERMINAL"
+
+[node name="Item2" type="Label" parent="MainMenu" unique_id=400000014]
+text = "  EMERGENCY SHUTDOWN"
+
+[node name="Warning" type="Label" parent="MainMenu" unique_id=400000015]
+text = "> CONNECTION ESTABLISHED // AUTHORIZED PERSONNEL ONLY"
+position = Vector2(0, 500)
+
+[node name="CreditsLabel" type="Label" parent="." unique_id=400000016]
+anchor_right = 1.0
+position = Vector2(100, 540)
+size = Vector2(1720, 200)
+visible = false
+vertical_alignment = 1
+horizontal_alignment = 1
+
+[node name="EndScreen" type="ColorRect" parent="." unique_id=400000017]
+anchor_right = 1.0
+anchor_bottom = 1.0
+position = Vector2(0, 0)
+size = Vector2(1920, 1080)
+color = Color(0, 0, 0, 1)
+visible = false
+z_index = 200
+
+[node name="Title" type="Label" parent="EndScreen" unique_id=400000018]
+text = "PROTOCOL COMPLETE"
+position = Vector2(0, 280)
+size = Vector2(1920, 40)
+vertical_alignment = 1
+horizontal_alignment = 1
+
+[node name="SubText" type="Label" parent="EndScreen" unique_id=400000019]
+text = ""
+position = Vector2(0, 340)
+size = Vector2(1920, 40)
+vertical_alignment = 1
+horizontal_alignment = 1

@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/levelgen/wall_rotation_paranoia.gd" id="paranoia_script"]
+
+[node name="WallRotationParanoia" type="Node3D" unique_id=200000005]
+script = ExtResource("paranoia_script")
+
+[node name="VisibleWall" type="MeshInstance3D" parent="." unique_id=200000006]
+mesh = BoxMesh { .size = Vector3(100, 200, 10) }
+
+[node name="SwapWall" type="MeshInstance3D" parent="." unique_id=200000007]
+mesh = BoxMesh { .size = Vector3(100, 200, 100) }
+visible = false
